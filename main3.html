@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здоровье ребенка под двойным контролем</title>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #2ECC71;
+            --dark-color: #2C3E50;
+            --light-color: #F8F9FA;
+            --gray-color: #BDC3C7;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 80px;
+            margin: 0 auto 30px auto;
+            max-width: 800px;
+        }
+        .tagline {
+            font-style: italic;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 15px;
+            font-size: 1.3rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        @media(min-width: 768px) {
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+            border-top: 5px solid var(--primary-color);
+        }
+        .card.gift {
+            border-top-color: var(--secondary-color);
+            background: #f0fdf4;
+        }
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-section {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .consent-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .consent-box input[type="checkbox"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .consent-box label {
+            font-size: 0.9rem;
+            color: #64748b;
+            cursor: pointer;
+            user-select: none;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+        .form-group input:disabled {
+            background-color: #f1f5f9;
+            cursor: not-allowed;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover:not(:disabled) {
+            background: #27ae60;
+        }
+        .btn:disabled {
+            background: var(--gray-color);
+            cursor: not-allowed;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>МедПлатформа</h2>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Здоровье ребенка под двойным контролем</h1>
+            <p>Запишитесь к ведущему детскому специалисту очно и получите Второе мнение от профессора медицины онлайн абсолютно бесплатно.</p>
+            <p class="tagline">«Один визит в клинику + Второе мнение онлайн в подарок. Потому что здоровье ребенка не терпит сомнений».</p>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <h3>🎯 Очный визит</h3>
+                <p>Для точного осмотра, пальпации и необходимых медицинских манипуляций в комфортных условиях клиники.</p>
+            </div>
+            <div class="card gift">
+                <span class="badge">Бесплатно</span>
+                <h3>💻 Телемед-экспертиза</h3>
+                <p>Для проверки диагноза, детальной расшифровки анализов и полной уверенности в каждом шаге назначенного лечения.</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Запись на приём</h2>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" id="leadForm">
+                <!-- Скрытый ключ Web3Forms -->
+                <input type="hidden" name="access_key" value="ВАШ_КЛЮЧ_ДОСТУПА_ЗДЕСЬ">
+                <input type="hidden" name="subject" value="Новая заявка с детского лендинга">
+                <input type="hidden" name="from_name" value="Детский Лендинг">
+                
+                <!-- Перенаправление на скрытую почту из формы -->
+                <input type="hidden" name="to_email" value="froggylandy@gmail.com">
+
+                <!-- Блок согласия ДО ввода данных -->
+                <div class="consent-box">
+                    <input type="checkbox" id="consent" onchange="toggleFormFields(this)">
+                    <label覆 label for="consent">Я даю согласие на обработку моих персональных данных для записи на приём и подтверждаю, что ознакомлен(а) с условиями конфиденциальности.</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Возраст ребенка (лет)</label>
+                    <input type="number" id="age" name="child_age" min="0" max="18" placeholder="Например: 5" required disabled>
+                </div>
+
+                <button type="submit" class="btn" id="submitBtn" disabled>Записаться и получить подарок</button>
+            </form>
+        </section>
+        
+        <p style="text-align: center; margin-bottom: 40px; color: #7f8c8d; font-weight: 500;">
+            Исключите медицинские ошибки без лишних трат и поездок.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Детская забота. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function toggleFormFields(checkbox) {
+            const form = document.getElementById('leadForm');
+            const inputs = form.querySelectorAll('input:not([type="checkbox"]):not([type="hidden"])');
+            const button = document.getElementById('submitBtn');
+            
+            inputs.forEach(input => {
+                input.disabled = !checkbox.checked;
+            });
+            button.disabled = !checkbox.checked;
+        }
+    </script>
+</body>
+</html>
